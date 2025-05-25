@@ -2,8 +2,7 @@ name: Build APK
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
@@ -18,10 +17,10 @@ jobs:
       with:
         python-version: 3.10
 
-    - name: Install build tools
+    - name: Install Buildozer and dependencies
       run: |
         sudo apt update
-        sudo apt install -y git zip unzip openjdk-11-jdk python3-pip build-essential libffi-dev libssl-dev
+        sudo apt install -y zip unzip openjdk-11-jdk python3-pip build-essential libffi-dev libssl-dev
         pip install --upgrade pip
         pip install cython
         pip install buildozer
@@ -31,7 +30,7 @@ jobs:
         buildozer android debug
 
     - name: Upload APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@7c833e0d0b8a1cf0bb0dc601fdf6da0b97349b6b
       with:
         name: PrankApp-APK
         path: bin/*.apk
