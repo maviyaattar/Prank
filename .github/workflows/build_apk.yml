@@ -27,7 +27,7 @@ jobs:
             zlib1g-dev libgstreamer1.0-0 libmtdev-dev \
             libgl1-mesa-dev libgles2-mesa-dev xclip xsel libjpeg-dev \
             libfreetype6-dev liblcms2-dev libwebp-dev libharfbuzz-dev libfribidi-dev libxcb1-dev \
-            libegl1-mesa libgles2-mesa
+            libegl1-mesa-dev libgles2-mesa-dev
 
           pip install --upgrade pip
           pip install cython buildozer
